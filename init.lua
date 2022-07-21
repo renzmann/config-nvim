@@ -1,7 +1,6 @@
 -- Author: Robert A. Enzmann
 -- License: Do anything you like.
 --
--- Styled after LuaRocks: https://github.com/luarocks/lua-style-guide
 -- Toggle the fold on any section using `za`
 
 -- Editor settings {{{
