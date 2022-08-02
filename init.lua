@@ -127,6 +127,12 @@ require("packer").startup(function()
    use({ "iamcco/markdown-preview.nvim", ft = "markdown" })
    use("habamax/vim-godot")
    use({ "ckipp01/stylua-nvim", run = "cargo install stylua" })
+   use({
+      "nvim-orgmode/orgmode",
+      config = function()
+         require("orgmode").setup({})
+      end,
+   })
 
    -- Project management
    use("airblade/vim-gitgutter")
