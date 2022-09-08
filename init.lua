@@ -64,8 +64,8 @@ o.wrap = false
 -- Packages {{{
 -- TODO: one way we can structure this is a bunch of "requires", and pipe a
 -- settings binding to telescope to go to a settings section.
-require("nvim-surround")
-require("nvim-lsp-installer")
+require("nvim-surround").setup({})
+require("nvim-lsp-installer").setup({})
 --require("packer").startup(function()
 --   -- packer can manage itself
 --   use("wbthomason/packer.nvim")
