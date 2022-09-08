@@ -64,84 +64,86 @@ o.wrap = false
 -- Packages {{{
 -- TODO: one way we can structure this is a bunch of "requires", and pipe a
 -- settings binding to telescope to go to a settings section.
-require("packer").startup(function()
-   -- packer can manage itself
-   use("wbthomason/packer.nvim")
+require("nvim-surround")
+require("nvim-lsp-installer")
+--require("packer").startup(function()
+--   -- packer can manage itself
+--   use("wbthomason/packer.nvim")
 
-   -- Can't live without
-   -- use "tpope/vim-surround"
-   use({
-      "kylechui/nvim-surround",
-      config = function()
-         require("nvim-surround").setup({})
-      end,
-   })
-   use("tpope/vim-commentary")
-   use("tpope/vim-fugitive")
+--   -- Can't live without
+--   -- use "tpope/vim-surround"
+--   use({
+--      "kylechui/nvim-surround",
+--      config = function()
+--         require("nvim-surround").setup({})
+--      end,
+--   })
+--   use("tpope/vim-commentary")
+--   use("tpope/vim-fugitive")
 
-   -- Wait until he finishes "only highlight after F is pressed"
-   -- jinh0/eyeliner.nvim
+--   -- Wait until he finishes "only highlight after F is pressed"
+--   -- jinh0/eyeliner.nvim
 
-   -- Autocomplete
-   use({
-      "williamboman/nvim-lsp-installer",
-      config = function()
-         require("nvim-lsp-installer").setup({})
-      end,
-   })
+--   -- Autocomplete
+--   use({
+--      "williamboman/nvim-lsp-installer",
+--      config = function()
+--         require("nvim-lsp-installer").setup({})
+--      end,
+--   })
 
-   use("neovim/nvim-lspconfig")
-   use({
-      "hrsh7th/nvim-cmp",
-      requires = {
-         { "hrsh7th/cmp-nvim-lsp" },
-         { "hrsh7th/cmp-buffer" },
-         { "hrsh7th/cmp-path" },
-         { "hrsh7th/vim-vsnip" },
-         { "hrsh7th/cmp-vsnip" },
-      },
-   })
+--   use("neovim/nvim-lspconfig")
+--   use({
+--      "hrsh7th/nvim-cmp",
+--      requires = {
+--         { "hrsh7th/cmp-nvim-lsp" },
+--         { "hrsh7th/cmp-buffer" },
+--         { "hrsh7th/cmp-path" },
+--         { "hrsh7th/vim-vsnip" },
+--         { "hrsh7th/cmp-vsnip" },
+--      },
+--   })
 
-   -- Colors
-   use("romainl/Apprentice")
-   use("EdenEast/nightfox.nvim")
-   use("arcticicestudio/nord-vim")
-   use("nvim-treesitter/nvim-treesitter")
-   use("RRethy/vim-illuminate")
-   use("norcalli/nvim-colorizer.lua")
+--   -- Colors
+--   use("romainl/Apprentice")
+--   use("EdenEast/nightfox.nvim")
+--   use("arcticicestudio/nord-vim")
+--   use("nvim-treesitter/nvim-treesitter")
+--   use("RRethy/vim-illuminate")
+--   use("norcalli/nvim-colorizer.lua")
 
-   -- Status bar
-   use({
-      "nvim-lualine/lualine.nvim",
-      requires = { "kyazdani42/nvim-web-devicons", opt = true },
-   })
+--   -- Status bar
+--   use({
+--      "nvim-lualine/lualine.nvim",
+--      requires = { "kyazdani42/nvim-web-devicons", opt = true },
+--   })
 
-   -- Fuzzy-finding
-   use({
-      "nvim-telescope/telescope.nvim",
-      requires = { "nvim-lua/plenary.nvim" },
-   })
+--   -- Fuzzy-finding
+--   use({
+--      "nvim-telescope/telescope.nvim",
+--      requires = { "nvim-lua/plenary.nvim" },
+--   })
 
-   -- Extra languages
-   use("JuliaEditorSupport/julia-vim")
-   use({ "iamcco/markdown-preview.nvim", ft = "markdown" })
-   use("habamax/vim-godot")
-   use({ "ckipp01/stylua-nvim", run = "cargo install stylua" })
-   use("nvim-orgmode/orgmode")
+--   -- Extra languages
+--   use("JuliaEditorSupport/julia-vim")
+--   use({ "iamcco/markdown-preview.nvim", ft = "markdown" })
+--   use("habamax/vim-godot")
+--   use({ "ckipp01/stylua-nvim", run = "cargo install stylua" })
+--   use("nvim-orgmode/orgmode")
 
-   -- Project management
-   use("airblade/vim-gitgutter")
-   use("rhysd/git-messenger.vim")
-   use("rbong/vim-flog")
+--   -- Project management
+--   use("airblade/vim-gitgutter")
+--   use("rhysd/git-messenger.vim")
+--   use("rbong/vim-flog")
 
-   -- gutentags causes nvim to hang on exit
-   -- use "ludovicchabant/vim-gutentags"
-   --
-   -- github.com/nginx/nginx/contrib/vim files could go to a packpath folder, if we want them
-   --
-   -- ? dhruvasagar/vim-table-mode
-   -- ? junegunn/vim-easy-align
-end)
+--   -- gutentags causes nvim to hang on exit
+--   -- use "ludovicchabant/vim-gutentags"
+--   --
+--   -- github.com/nginx/nginx/contrib/vim files could go to a packpath folder, if we want them
+--   --
+--   -- ? dhruvasagar/vim-table-mode
+--   -- ? junegunn/vim-easy-align
+--end)
 -- }}}
 
 -- Colors, Highlighting, and TreeSitter {{{
