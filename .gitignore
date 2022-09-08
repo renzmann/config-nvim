@@ -41,3 +41,4 @@ luac.out
 
 # My own stuff
 plugin/packer_compiled.lua
+*.swp
