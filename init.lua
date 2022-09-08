@@ -147,7 +147,9 @@ require("nvim-lsp-installer").setup({})
 -- }}}
 
 -- Colors, Highlighting, and TreeSitter {{{
-if vim.env.TMUX == nil then
+if string.find(vim.env.TERM, "screen") then
+   vim.cmd("colorscheme apprentice")
+elseif vim.env.TMUX == nil then
    require("renzmann.colors")
 elseif vim.fn.system("tmux -V") > "tmux 2.2" then
    -- FIXME this assumes that the currently running tmux is the same as what's on PATH... not
