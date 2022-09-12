@@ -22,4 +22,4 @@ git clone https://github.com/renzmann/config-nvim %LOCALAPPDATA%\nvim
 ## Step 2: Get all the plugins
 
 Packages are maintained as [git subtrees](https://man.archlinux.org/man/git-subtree.1).  Each package
-can be updated via e.g. `git subtree -P pack/<name>/start/<package> <repo> <branch>`.
+can be updated via e.g. `git subtree -P pack/<name>/start/<package> <repo> <branch> --squash`.
