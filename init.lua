@@ -146,7 +146,7 @@ require("nvim-lsp-installer")
 --end)
 -- }}}
 
--- Colors, Highlighting, and TreeSitter {{{
+-- Colors, Highlighting {{{
 if vim.env.TMUX == nil then
    require("renzmann.colors")
 elseif vim.fn.system("tmux -V") > "tmux 2.2" then
@@ -325,4 +325,8 @@ lspconfig.julials.setup({
 
 -- Uncomment to disable location list of diagnostics
 -- vim.lsp.diagnostic.set_loclist({ open_loclist = false })
+-- }}}
+
+-- Tree-Sitter {{{
+require("renzmann.tree_sitter")
 -- }}}
