@@ -4,7 +4,7 @@
 -- Search for [<letter> to see what's mapped under <leader><letter>.
 -- e.g. /[s will take you to the settings navigation section.
 
--- Function closures for easier reading
+-- Function closures for easier reading {{{
 local function silent_mode(mode, lhs, rhs)
    return vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
@@ -22,6 +22,7 @@ local function silent_visual(lhs, rhs)
    return silent_mode("v", lhs, rhs)
 end
 local config = vim.fn.stdpath("config")
+-- }}}
 
 -- No leader (misc.) {{{
 -- Faster scrolling
