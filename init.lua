@@ -146,7 +146,7 @@ require("nvim-lsp-installer").setup({})
 --end)
 -- }}}
 
--- Colors, Highlighting, and TreeSitter {{{
+-- Colors, Highlighting {{{
 if string.find(vim.env.TERM, "screen") then
    vim.cmd("colorscheme apprentice")
 elseif vim.env.TMUX == nil then
@@ -327,4 +327,8 @@ lspconfig.julials.setup({
 
 -- Uncomment to disable location list of diagnostics
 -- vim.lsp.diagnostic.set_loclist({ open_loclist = false })
+-- }}}
+
+-- Tree-Sitter {{{
+require("renzmann.tree_sitter")
 -- }}}

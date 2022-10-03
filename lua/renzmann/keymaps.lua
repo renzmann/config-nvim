@@ -4,7 +4,7 @@
 -- Search for [<letter> to see what's mapped under <leader><letter>.
 -- e.g. /[s will take you to the settings navigation section.
 
--- Function closures for easier reading
+-- Function closures for easier reading {{{
 local function silent_mode(mode, lhs, rhs)
    return vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
@@ -22,7 +22,9 @@ local function silent_visual(lhs, rhs)
    return silent_mode("v", lhs, rhs)
 end
 local config = vim.fn.stdpath("config")
+-- }}}
 
+-- No leader (misc.) {{{
 -- Faster scrolling
 silent_normal("<C-e>", "2<C-e>")
 silent_normal("<C-y>", "2<C-y>")
@@ -43,8 +45,9 @@ silent_normal("cgn", [[:<C-u>let @/=expand('<cword>')<cr>cgn]])
 
 -- Capitalize last word while inserting text
 silent_insert("<C-j>", "<Esc>gUiwea")
+-- }}}
 
--- [s]ettings navigation
+-- [s]ettings navigation {{{
 -------------------------------------------------------------------------
 local new_find = function(path)
    local wrapped = function(opts)
@@ -64,29 +67,33 @@ silent_normal("<Leader>sk", "<Cmd>edit " .. config .. "/lua/renzmann/keymaps.lua
 silent_normal("<Leader>sp", find_plugins)
 silent_normal("<Leader>sf", find_ftplugins)
 silent_normal("<Leader>sm", find_mine)
+-- }}}
 
--- Markdown and RST headers [1] [2] [3] [4]
+-- Markdown and RST headers [1] [2] [3] [4] {{{
 -------------------------------------------------------------------------
 silent_normal("<Leader>1", "yypVr=")
 silent_normal("<Leader>2", "yypVr-")
 silent_normal("<Leader>3", "yypVr+")
 silent_normal("<Leader>4", "yypVr*")
 silent_operator("ih", [[:<C-U>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<CR>]])
+-- }}}
 
--- Tab movement [h] [l]
+-- Tab movement [h] [l] {{{
 -------------------------------------------------------------------------
 silent_normal("<Leader>h", ":<C-u>bprevious<CR>")
 silent_normal("<Leader>l", ":<C-u>bnext<CR>")
 silent_normal("<Leader>H", ":<C-u>tabprevious<CR>")
 silent_normal("<Leader>L", ":<C-u>tabnext<CR>")
+-- }}}
 
--- [c]lipboard [c]ommands
+-- [c]lipboard [c]ommands {{{
 -------------------------------------------------------------------------
 silent_normal("<Leader>cv", 'V"+p')
 silent_visual("<Leader>cv", '"+p')
 silent_visual("<Leader>cc", '"+y')
+-- }}}
 
--- [f]ind things
+-- [f]ind things {{{
 -------------------------------------------------------------------------
 silent_normal("<Leader>ff", ":Telescope find_files<CR>")
 silent_normal("<Leader>fb", ":Telescope buffers<CR>")
@@ -98,8 +105,9 @@ silent_normal("<Leader>fq", ":Telescope quickfix<CR>")
 silent_normal("<Leader>fc", ":Telescope command_history<CR>")
 silent_normal("<Leader>fo", ":Telescope oldfiles<CR>")
 silent_normal("<Leader>fa", ":<C-u>e ~/.aws/credentials<CR>")
+-- }}}
 
--- Language server bindings
+-- Language server bindings {{{
 -------------------------------------------------------------------------
 silent_normal("<C-s>", "<ESC>l:lua vim.lsp.buf.signature_help()<CR>i")
 silent_normal("<Leader>wa", ":lua vim.lsp.buf.add_workspace_folder()<CR>")
@@ -116,8 +124,10 @@ silent_normal("<Leader>de", ":lua vim.diagnostic.open_float()<CR>")
 silent_normal("<Leader>dn", ":lua vim.diagnostic.goto_next()<CR>")
 silent_normal("<Leader>dp", ":lua vim.diagnostic.goto_prev()<CR>")
 silent_normal("<Leader>dq", ":lua vim.diagnostic.setqflist()<CR>")
+-- }}}
 
--- e[x]tra
+-- e[x]tra {{{
 -------------------------------------------------------------------------
 -- nnoremap <silent><Leader>xm    :<C-u>GitMessenger<CR>
 silent_normal("<Leader>xm", "<Plug>(git-messenger)")
+-- }}}
