@@ -48,34 +48,3 @@ add-package() {
 for p in ${packages}; do
 	add-package ${p}
 done
-
-
-# git@github.com:kylechui/nvim-surround
-# git@github.com:tpope/vim-commentary
-# git@github.com:tpope/vim-fugitive
-# git@github.com:williamboman/nvim-lsp-installer
-# git@github.com:neovim/nvim-lspconfig
-# git@github.com:hrsh7th/cmp-nvim-lsp
-# git@github.com:hrsh7th/cmp-buffer
-# git@github.com:hrsh7th/cmp-path
-# git@github.com:hrsh7th/vim-vsnip
-# git@github.com:hrsh7th/cmp-vsnip
-# git@github.com:hrsh7th/nvim-cmp
-# git@github.com:romainl/Apprentice
-# git@github.com:EdenEast/nightfox.nvim
-# git@github.com:arcticicestudio/nord-vim
-# git@github.com:nvim-treesitter/nvim-treesitter
-# git@github.com:RRethy/vim-illuminate
-# git@github.com:norcalli/nvim-colorizer.lua
-# git@github.com:kyazdani42/nvim-web-devicons
-# git@github.com:nvim-lualine/lualine.nvim
-# git@github.com:nvim-lua/plenary.nvim
-# git@github.com:nvim-telescope/telescope.nvim
-# git@github.com:JuliaEditorSupport/julia-vim
-# git@github.com:iamcco/markdown-preview.nvim
-# git@github.com:habamax/vim-godot
-# git@github.com:ckipp01/stylua-nvim
-# git@github.com:nvim-orgmode/orgmode
-# git@github.com:airblade/vim-gitgutter
-# git@github.com:rhysd/git-messenger.vim
-# git@github.com:rbong/vim-flog
