@@ -31,6 +31,7 @@ start/nvim-orgmode/orgmode/master
 start/airblade/vim-gitgutter/master
 start/rhysd/git-messenger.vim/master
 start/rbong/vim-flog/master
+start/untitled-ai/jupyter_ascending.vim/master
 "
 
 add-package() {
