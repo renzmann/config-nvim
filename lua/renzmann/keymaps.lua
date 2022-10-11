@@ -130,4 +130,6 @@ silent_normal("<Leader>dq", ":lua vim.diagnostic.setqflist()<CR>")
 -------------------------------------------------------------------------
 -- nnoremap <silent><Leader>xm    :<C-u>GitMessenger<CR>
 silent_normal("<Leader>xm", "<Plug>(git-messenger)")
+silent_normal("<Leader>xj", "<Plug>JupyterExecute")
+silent_normal("<Leader>xJ", "<Plug>JupyterExecuteAll")
 -- }}}
