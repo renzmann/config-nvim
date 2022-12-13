@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 packages="
 start/wbthomason/packer.nvim/master
@@ -34,10 +35,11 @@ start/rbong/vim-flog/master
 start/untitled-ai/jupyter_ascending.vim/master
 "
 
-add-package() {
+package() {
+	local operation="${1}"
 	local IFS=/
 	local components
-	read -ra components <<< "${1}"
+	read -ra components <<< "${2}"
 	local startopt="${components[0]}"
 	local namespace="${components[1]}"
 	local package="${components[2]}"
@@ -45,6 +47,11 @@ add-package() {
 	git subtree add -P "pack/${namespace}/${startopt}/${package}" git@github.com:${namespace}/${package} ${branch} --squash
 }
 
+if [ -z ${1} ]; then
+	echo 'One of the arguments (`add`, `pull`) must be supplied'
+	exit 1
+fi
+
 for p in ${packages}; do
-	add-package ${p}
+	package ${1} ${p}
 done
