@@ -12,7 +12,7 @@ configs.setup {
 
 parser_config.python = {
   install_info = {
-    url = config .. "parsers/tree-sitter-python", -- local path or git repo
+    url = config .. "/parsers/tree-sitter-python", -- local path or git repo
     files = {"src/parser.c", "src/scanner.cc"},
     -- optional entries:
     branch = "main", -- default branch in case of git repo if different from master
